@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+<meta charset="UTF-8">
+<title>Outfit Builder</title>
+
+<style>
+    body {
+        font-family: Arial;
+        text-align: center;
+        background: #f5f5f5;
+    }
+
+    .container {
+        display: flex;
+        justify-content: center;
+        margin-top: 30px;
+    }
+
+    .doll-area {
+        position: relative;
+        width: 300px;
+        height: 500px;
+        border: 2px solid #ccc;
+        background: white;
+    }
+
+    .doll-area img {
+        position: absolute;
+        width: 100%;
+        left: 0;
+        top: 0;
+    }
+
+    .controls {
+        margin-left: 40px;
+    }
+
+    button {
+        display: block;
+        margin: 10px;
+        padding: 10px;
+        cursor: pointer;
+    }
+</style>
+</head>
+
+<body>
+
+<h1>Vyzkoušej outfit 👗</h1>
+
+<div class="container">
+
+    <!-- PANENKA -->
+    <div class="doll-area">
+        <img src="https://via.placeholder.com/300x500?text=Panenka" id="doll">
+
+        <!-- OBLEČENÍ -->
+        <img id="top">
+        <img id="bottom">
+    </div>
+
+    <!-- OVLÁDÁNÍ -->
+    <div class="controls">
+        <h3>Trička</h3>
+        <button onclick="setTop('https://via.placeholder.com/300x500/ffaaaa?text=Tričko+1')">Tričko 1</button>
+        <button onclick="setTop('https://via.placeholder.com/300x500/aaffaa?text=Tričko+2')">Tričko 2</button>
+
+        <h3>Kalhoty</h3>
+        <button onclick="setBottom('https://via.placeholder.com/300x500/aaaaff?text=Kalhoty+1')">Kalhoty 1</button>
+        <button onclick="setBottom('https://via.placeholder.com/300x500/ffffaa?text=Kalhoty+2')">Kalhoty 2</button>
+
+        <button onclick="resetOutfit()">Reset</button>
+    </div>
+
+</div>
+
+<script>
+function setTop(src) {
+    document.getElementById("top").src = src;
+}
+
+function setBottom(src) {
+    document.getElementById("bottom").src = src;
+}
+
+function resetOutfit() {
+    document.getElementById("top").src = "";
+    document.getElementById("bottom").src = "";
+}
+</script>
+
+</body>
+</html>
